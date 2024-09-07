@@ -22,6 +22,12 @@ if (isset($_POST['agregar_tarea'])) {
     $sentencia = $conn->prepare($sql);
     $sentencia->execute([$tarea]);
 }
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $sql='DELETE FROM tareas WHERE id=?';
+    $sentencia = $conn->prepare($sql);
+    $sentencia->execute([$id]);
+} 
 
 $sql = 'SELECT * FROM tareas';
 $resultados = $conn->query($sql);

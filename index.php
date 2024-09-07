@@ -1,4 +1,4 @@
-<?php include("agregar_tarea.php"); ?>
+<?php include("./apps/todolist_fall/agregar_tarea.php"); ?>
 <!doctype html>
 <html lang="en">
 
@@ -26,7 +26,7 @@
                 <div class="mb-3">
                     <form action="" method="post">
                         <label for="tarea" class="form-label">Tarea:</label>
-                        <input type="text" class="form-control" name="tarea" id="tarea" aria-describedby="helpId"
+                        <input type="text" class="form-control" name="tarea" i d="tarea" aria-describedby="helpId"
                             placeholder="Agregar nueva tarea" />
                         <br>
                         <input name="agregar_tarea" id="agregar_tarea" class="btn btn-primary" type="submit"
@@ -39,7 +39,8 @@
                             <input class="form-check-input float-start" type="checkbox" value="" id="" />
                             &nbsp; <span class="float-start">&nbsp;<?php echo $resultado['nombre_tarea']; ?></span>
                             <h6 class="float-start">
-                                &nbsp; <span class="badge bg-danger">x</span>
+                                &nbsp; <a href="?id=<?php echo $resultado['id']; ?>"><span
+                                        class="badge bg-danger">x</span></a>
                             </h6>
                         </label>
 

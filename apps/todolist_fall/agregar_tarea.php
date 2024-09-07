@@ -13,14 +13,18 @@ try {
     //Cadena de conexión con mysqli
     $conn = new mysqli($host, $user, $passwd, $db);
 } catch (Exception $e) {
-    echo 'Errore de conexión' . $e->getMessage() . '';
+    echo 'Errores de conexión' . $e->getMessage() . '';
     //echo 'Conexión exitosa';
 }
-if ($_POST) {
-    print_r($_POST);
+if (isset($_POST['agregar_tarea'])) {
+    $tarea = $_POST['tarea'];
+    $sql = 'INSERT INTO tareas (nombre_tarea) VALUE(?)';
+    $sentencia = $conn->prepare($sql);
+    $sentencia->execute([$tarea]);
 }
-$sql_selquery = 'SELECT * FROM tareas';
-$resultados = $conn->query($sql_selquery);
+
+$sql = 'SELECT * FROM tareas';
+$resultados = $conn->query($sql);
 
 //foreach ($resultados as $resultado) {
 // print_r($resultado);

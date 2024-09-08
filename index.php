@@ -52,17 +52,17 @@
                     </form>
                 </div>
                 <ul class="list-group">
-                    <li class="list-group-item">
-                        <input class="form-check-input float-start" type="checkbox" value="" id="" checked />
-                        <span class="float-start">Tarea 1</span>
-                        <h6 class="float-start">
-                            &nbsp; <span class="badge bg-danger">x</span>
-                        </h6>
-                    </li>
-                    <li class="list-group-item">
-                        <input class="form-check-input" type="checkbox" value="" id="" checked />
-                        Tarea 1
-                    </li>
+                    <?php foreach ($registros as $registro) { ?>
+                        <li class="list-group-item">
+                            <input class="form-check-input float-start" type="checkbox" value="" id="" checked />
+                            <span class="float-start"><?php echo $registro['nombre_tarea']; ?></span>
+                            <h6 class="float-start">
+                                &nbsp; &nbsp; <span class="badge bg-danger">x</span>
+                            </h6>
+                        </li>
+
+                    <?php } ?>
+
                 </ul>
 
             </div>

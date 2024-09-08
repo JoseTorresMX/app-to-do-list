@@ -1,11 +1,14 @@
 <?php
+session_start();
+
+
 $conn = mysqli_connect(
-    'localhost',
-    'root',
-    '',
-    'todolist'
+  'localhost',
+  'root',
+  '',
+  'todolist'
 );
 
 //if (isset($conn)) {
-  //  echo 'db conectadad';
+//  echo 'db conectadad';
 //}

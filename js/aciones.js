@@ -1,10 +1,26 @@
-const checkbox = document.getElementById("form-check-input");
-const textos = document.getElementsByClassName("tachas");
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .getElementById("formulario")
+    .addEventListener("submit", validarFormulario);
+});
+
+function validarFormulario(evento) {
+  evento.preventDefault();
+  const nomTarea = document.getElementById("nuevaTarea").value;
+  if (nomTarea.lenght == 0) {
+    alert("Debe agregar un titulo para una tarea");
+    return;
+  }
+  this.submit();
+}
+
+const checkbox = document.getElementById("flexCheckDefault");
+const texto = document.getElementById("myTexto");
 
 checkbox.addEventListener("change", () => {
   if (checkbox.checked) {
-    textos.style.textDecoration = "line-through";
+    texto.clossList.add("tachita");
   } else {
-    textos.style.textDecoration = "none";
+    texto.classList.remove("tachita");
   }
 });

@@ -54,9 +54,18 @@
                 <ul class="list-group">
                     <?php foreach ($registros as $registro) { ?>
                         <li class="list-group-item">
-                            <input class="form-check-input float-start" type="checkbox" value="" id="" <?php echo ($registro['completada'] == 1) ? 'checked' : ''; ?> />
-                            <?php echo $registro['completada']; ?>
-                            &nbsp; <span
+                            <form action="" method="post">
+                            <input 
+                            class="form-check-input float-start" 
+                            type="checkbox" 
+                            value="" 
+                            id="" 
+                            <?php echo ($registro['completada'] == 1) ? 'checked' : ''; ?> /> 
+                            </form>
+                           
+            
+                            &nbsp; 
+                            <span
                                 class="float-start<?php echo ($registro['completada'] == 1) ? 'tachita' : ''; ?>">&nbsp;<?php echo $registro['nombre_tarea']; ?></span>
                             <h6 class="float-start">
                                 &nbsp;<a href="?id=<?php echo $registro['id']; ?>"><span class="badge bg-danger">Borrar</a>

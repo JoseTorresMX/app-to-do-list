@@ -11,6 +11,7 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
@@ -53,10 +54,12 @@
                 <ul class="list-group">
                     <?php foreach ($registros as $registro) { ?>
                         <li class="list-group-item">
-                            <input class="form-check-input float-start" type="checkbox" value="" id="" checked />
-                            <span class="float-start"><?php echo $registro['nombre_tarea']; ?></span>
+                            <input class="form-check-input float-start" type="checkbox" value="" id="" <?php echo ($registro['completada'] == 1) ? 'checked' : ''; ?> />
+                            <?php echo $registro['completada']; ?>
+                            &nbsp; <span
+                                class="float-start<?php echo ($registro['completada'] == 1) ? 'tachita' : ''; ?>">&nbsp;<?php echo $registro['nombre_tarea']; ?></span>
                             <h6 class="float-start">
-                                &nbsp; &nbsp; <a href="?id=<?php echo $registro['id']; ?>"><span class="badge bg-danger">Borrar</a>
+                                &nbsp;<a href="?id=<?php echo $registro['id']; ?>"><span class="badge bg-danger">Borrar</a>
                             </h6>
                         </li>
                     <?php } ?>

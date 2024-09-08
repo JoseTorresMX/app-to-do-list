@@ -56,21 +56,14 @@
                         <li class="list-group-item">
                             <form action="" method="post">
                                 <input type="hidden" name="id" value="<?php echo $registro['id']; ?>">
-                            <input 
-                            class="form-check-input float-start" 
-                            type="checkbox"
-                            name="completada" 
-                            value="<?php echo $registro['completada']; ?>" id=""
-                            onChange="this.form.submit()" 
-                            <?php echo ($registro['completada'] == 1) ? 'checked' : ''; ?> /> 
+                                <input class="form-check-input float-start" type="checkbox" name="completado"
+                                    value="<?php echo $registro['completada']; ?>" id="" onChange="this.form.submit()" <?php echo ($registro['completada'] == 1) ? 'checked' : ''; ?> />
                             </form>
-                           
-            
-                            &nbsp; 
+                            &nbsp;
                             <span
-                                class="float-start<?php echo ($registro['completada'] == 1) ? 'tachita' : ''; ?>">&nbsp;<?php echo $registro['nombre_tarea']; ?></span>
+                                class="float-start <?php echo ($registro['completada'] == 1) ? 'tachita' : ''; ?>">&nbsp;<?php echo $registro['nombre_tarea']; ?></span>
                             <h6 class="float-start">
-                                &nbsp;<a href="?id=<?php echo $registro['id']; ?>"><span class="badge bg-danger">Borrar</a>
+                                &nbsp;<a href="?id=<?php echo $registro['id']; ?>"><span class="badge bg-danger">x</a>
                             </h6>
                         </li>
                     <?php } ?>

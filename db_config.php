@@ -15,9 +15,11 @@ try {
 //Actualizando y valiando tarea compeltadda
 if (isset($_POST["id"])) {
     $id = $_POST["id"];
-    $completada = (isset($_POST['completada'])) ? 1 : 0;
+    $completado = isset($_POST['completado']) ? 1 : 0;
 
-    
+    $sql = "UPDATE tareas SET completada=? WHERE id=?";
+    $sentencia = $conn->prepare($sql);
+    $sentencia->execute([$completado, $id]);
 
     //echo $completada;
     //echo "<br>";

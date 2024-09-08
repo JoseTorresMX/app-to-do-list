@@ -12,6 +12,20 @@ try {
 } catch (Exception $e) {
     echo "Algo falló";
 }
+//Actualizando y valiando tarea compeltadda
+if (isset($_POST["id"])) {
+    $id = $_POST["id"];
+    $completada = (isset($_POST['completada'])) ? 1 : 0;
+
+    
+
+    //echo $completada;
+    //echo "<br>";
+    //echo $id;
+    //$id = $_POST["id"];
+    //print_r($_POST);
+}
+
 
 //Agregando registros
 if (isset($_POST['agregar_tarea'])) {

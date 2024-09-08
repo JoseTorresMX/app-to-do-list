@@ -40,18 +40,33 @@
                 </div>
             </nav>
             <div class="card-body">
-                <form action="" method="post">
-                    <div class="mb-3">
+
+                <div class="mb-3">
+                    <form action="" method="post">
                         <label for="tarea" class="form-label">Ingresa nombre de la tarea:</label>
                         <input type="text" class="form-control" name="tarea" id="tarea" aria-describedby="helpId"
                             placeholder="Titulo de la tarea" />
                         <br>
                         <input name="agregar_tarea" id="agregar_tarea" class="btn btn-primary" type="button"
                             value="Agregar tarea" />
-                    </div>
-                </form>
+                    </form>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <input class="form-check-input float-start" type="checkbox" value="" id="" checked />
+                        <span class="float-start">Tarea 1</span>
+                        <h6 class="float-start">
+                            &nbsp; <span class="badge bg-danger">x</span>
+                        </h6>
+                    </li>
+                    <li class="list-group-item">
+                        <input class="form-check-input" type="checkbox" value="" id="" checked />
+                        Tarea 1
+                    </li>
+                </ul>
+
             </div>
-            <div class="card-footer text-muted">Footer</div>
+            <div class="card-footer text-muted"></div>
         </div>
 
 

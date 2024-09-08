@@ -40,14 +40,13 @@
                 </div>
             </nav>
             <div class="card-body">
-
                 <div class="mb-3">
                     <form action="" method="post">
                         <label for="tarea" class="form-label">Ingresa nombre de la tarea:</label>
                         <input type="text" class="form-control" name="tarea" id="tarea" aria-describedby="helpId"
                             placeholder="Titulo de la tarea" />
                         <br>
-                        <input name="agregar_tarea" id="agregar_tarea" class="btn btn-primary" type="button"
+                        <input name="agregar_tarea" id="agregar_tarea" class="btn btn-primary" type="submit"
                             value="Agregar tarea" />
                     </form>
                 </div>
@@ -57,19 +56,14 @@
                             <input class="form-check-input float-start" type="checkbox" value="" id="" checked />
                             <span class="float-start"><?php echo $registro['nombre_tarea']; ?></span>
                             <h6 class="float-start">
-                                &nbsp; &nbsp; <span class="badge bg-danger">x</span>
+                                &nbsp; &nbsp; <a href="?id=<?php echo $registro['id']; ?>"><span class="badge bg-danger">Borrar</a>
                             </h6>
                         </li>
-
                     <?php } ?>
-
                 </ul>
-
             </div>
             <div class="card-footer text-muted"></div>
         </div>
-
-
     </main>
     <footer>
         <!-- place footer here -->

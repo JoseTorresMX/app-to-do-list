@@ -53,3 +53,10 @@ Las contribuciones son lo que hacen a la comunidad de código abierto un lugar i
 [![Josetorresmx](https://img.shields.io/badge/Josetorresmx-gray?style=for-the-badge&logo=github&link=https://github.com/JoseTorresMX)](https://github.com/JoseTorresMX)
 
 [![Josetorresmx](https://img.shields.io/badge/Josetorresmx-01579B?style=for-the-badge&logo=linkedin&link=https://www.linkedin.com/in/josetorresmx/)](https://www.linkedin.com/in/josetorresmx/)
+
+## Licencia
+Este proyecto esta bajo la licencia MIT - ve el archivo [LICENSE.md](LICENSE). Para mas detalles [MIT](https://choosealicense.com/licenses/mit/)
+
+## Expresiones de Gratitud
+Estoy agradecido con la comunidad de desarrolladores, sobre todo a las comunidades/grupos a los que estoy admitido, las cuales los miembros se toman el tiempo de brindar consejos, guías, ayudas, etc.
+

@@ -23,3 +23,9 @@ En el proyecto del lado del servidor, se uso PHP en conjunto con MySQL como moto
 
 Base de datos
 ![bd_mysql](img/captura2.png)
+
+# Instalación
+Primero que nada, tener el software [XAMPP](https://www.apachefriends.org/es/index.html)
+```bash
+git clone https://github.com/JoseTorresMX/practica1-to-do-list.git
+```

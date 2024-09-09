@@ -7,7 +7,11 @@ Se uso el IDE Visual Studio Code en conjunto con XAMPP, un software gratuito y f
 
 ## UI/XU
 Para la maquetación del la interfaz de usuario, se uso el software online [moqups](https://moqups.com/).
+
 ![Diseño UI/UX](img/captura1.png)
+
+![App Web](img/captura3.png)
+
 
 ## FrontEnd
 Para el frontend usan las tecnologias web comunes (HTML, CSS) y Bootstrap v5, haciendo la contruccion de la aplicacion mas rapido.

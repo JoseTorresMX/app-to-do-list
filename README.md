@@ -8,8 +8,10 @@ Se uso el IDE Visual Studio Code en conjunto con XAMPP, un software gratuito y f
 ## UI/XU
 Para la maquetación del la interfaz de usuario, se uso el software online [moqups](https://moqups.com/).
 
+Maquetado de la Aplicación
 ![Diseño UI/UX](img/captura1.png)
 
+Diseño final de la Aplicación
 ![App Web](img/captura3.png)
 
 

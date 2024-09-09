@@ -22,4 +22,4 @@ Para el frontend usan las tecnologias web comunes (HTML, CSS) y Bootstrap v5, ha
 En el proyecto del lado del servidor, se uso PHP en conjunto con MySQL como motor de base de datos.
 
 Base de datos
-1[bd_mysql](img/captura2.png)
+![bd_mysql](img/captura2.png)

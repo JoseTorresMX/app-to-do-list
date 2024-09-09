@@ -24,7 +24,7 @@
         <div class="card">
             <nav class="navbar navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/">
+                    <a class="navbar-brand" href="index.php">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-address-book"
                             width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none"
                             stroke-linecap="round" stroke-linejoin="round">
@@ -56,15 +56,18 @@
                     <?php foreach ($registros as $registro) { ?>
                         <li class="list-group-item">
                             <form action="" method="post">
-                                <input type="hidden" name="id" value="<?php echo $registro['id']; ?>">
-                                <input class="form-check-input float-start" type="checkbox" name="completado"
-                                    value="<?php echo $registro['completada']; ?>" id="" onChange="this.form.submit()" <?php echo ($registro['completada'] == 1) ? 'checked' : ''; ?> />
+                            <input 
+                            class="form-check-input float-start" 
+                            type="checkbox" 
+                            value="" 
+                            id="" 
+                            <?php echo ($registro['completada'] == 1) ? 'checked' : ''; ?> /> 
                             </form>
                             &nbsp;
                             <span
                                 class="float-start <?php echo ($registro['completada'] == 1) ? 'tachita' : ''; ?>">&nbsp;<?php echo $registro['nombre_tarea']; ?></span>
                             <h6 class="float-start">
-                                &nbsp;<a href="?id=<?php echo $registro['id']; ?>"><span class="badge bg-danger">x</a>
+                                &nbsp;<a href="?id=<?php echo $registro['id']; ?>"><span class="badge bg-danger">Borrar</a>
                             </h6>
                         </li>
                     <?php } ?>

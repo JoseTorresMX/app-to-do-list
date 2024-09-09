@@ -56,12 +56,14 @@
                     <?php foreach ($registros as $registro) { ?>
                         <li class="list-group-item">
                             <form action="" method="post">
-                            <input 
-                            class="form-check-input float-start" 
-                            type="checkbox" 
-                            value="" 
-                            id="" 
-                            <?php echo ($registro['completada'] == 1) ? 'checked' : ''; ?> /> 
+                                <input type="hidden" name="id" value="<?php echo $registro['id']; ?>">
+                                <input 
+                                    class="form-check-input float-start" 
+                                    type="checkbox" 
+                                    name="completado"
+                                    value="<?php echo $registro['completada']; ?>" id="" 
+                                    onChange="this.form.submit()" 
+                                    <?php echo ($registro['completada'] == 1) ? 'checked' : ''; ?> />
                             </form>
                             &nbsp;
                             <span

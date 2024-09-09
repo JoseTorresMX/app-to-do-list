@@ -7,12 +7,11 @@ $dbname = 'todolist';
 //Creando conexión
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $passwd);
-    //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //echo "Conexion exitosa";
 } catch (Exception $e) {
     echo "Algo falló";
 }
-<<<<<<< HEAD
 //Actualizando y valiando tarea compeltadda
 if (isset($_POST["id"])) {
     $id = $_POST["id"];
@@ -30,15 +29,6 @@ if (isset($_POST["id"])) {
 }
 
 
-=======
-if (isset($_POST["id"])) {
-    $id = $_POST["id"];
-    $completada = (isset($_POST["completado"])) ? 1 : 0;
-    $sql = "UPDATE tareas SET completada=? WHERE id=?";
-    $sentencia = $conn->prepare($sql);
-    $sentencia->execute([$completada, $id]);
-}
->>>>>>> funcional
 //Agregando registros
 if (isset($_POST['agregar_tarea'])) {
     $tarea = ($_POST['tarea']);

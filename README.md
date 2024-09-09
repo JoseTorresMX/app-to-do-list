@@ -37,3 +37,19 @@ Lueego abrir el navegador y el la barra de direcciones escribir lo siguiente:
 http://localhost/practica1-to-do-list
 ```
 Con esto, ya puede tener una demo del funcionamiento del la aplicacion.
+
+## Contribuyendo
+Las contribuciones son lo que hacen a la comunidad de código abierto un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas es muy apreciada.
+
+## Se uso [Git](https://git-scm.com) para el versionado del proyecto.
+
+[![GIT](https://img.shields.io/badge/GIT-gray?style=for-the-badge&logo=git&link=https://git-scm.com/)](https://git-scm.com/)
+
+[![github](https://img.shields.io/badge/github-gray?style=for-the-badge&logo=github&link=https://github.com/)](https://github.com/)
+
+## Autor(es)
+- **Jose Torres** - _Trabajo inicial_
+
+[![Josetorresmx](https://img.shields.io/badge/Josetorresmx-gray?style=for-the-badge&logo=github&link=https://github.com/JoseTorresMX)](https://github.com/JoseTorresMX)
+
+[![Josetorresmx](https://img.shields.io/badge/Josetorresmx-01579B?style=for-the-badge&logo=linkedin&link=https://www.linkedin.com/in/josetorresmx/)](https://www.linkedin.com/in/josetorresmx/)

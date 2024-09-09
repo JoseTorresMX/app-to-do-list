@@ -16,6 +16,7 @@
 
 <body>
     <header>
+        <h1>corecicon</h1>
         <!-- place navbar here -->
     </header>
     <main class="container">

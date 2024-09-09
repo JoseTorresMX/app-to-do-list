@@ -31,3 +31,9 @@ Despues, clonar el repositorio en la carpeta **htdocs**, esta carpeta esta en la
 ```bash
 git clone https://github.com/JoseTorresMX/practica1-to-do-list.git
 ```
+Abrir VS Code para ver el codigo fuente.
+Lueego abrir el navegador y el la barra de direcciones escribir lo siguiente:
+```bash
+http://localhost/practica1-to-do-list
+```
+Con esto, ya puede tener una demo del funcionamiento del la aplicacion.

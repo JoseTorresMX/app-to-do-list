@@ -25,7 +25,9 @@ Base de datos
 ![bd_mysql](img/captura2.png)
 
 # Instalación
-Primero que nada, tener el software [XAMPP](https://www.apachefriends.org/es/index.html)
+Primero que nada, tener el software [XAMPP](https://www.apachefriends.org/es/index.html) y tener los servicios iniciados.
+
+Despues, clonar el repositorio en la carpeta **htdocs**, esta carpeta esta en la carpeta de instalación de XAMPP.
 ```bash
 git clone https://github.com/JoseTorresMX/practica1-to-do-list.git
 ```

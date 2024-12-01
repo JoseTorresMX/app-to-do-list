@@ -1,122 +1,94 @@
-<?php
-session_start();
-require_once("header.php");
-?>
-<div class="container">
-    <div class="row">
-        <div class="col-8 m-auto">
+<?php include "db_config.php"; ?>
+<!doctype html>
+<html lang="en">
 
-            <h2 class="display-4 text-center">Lista de Tareas</h2>
-            <form class="mt-4" action="index_validaciones.php" method="post">
-                <div class="form-group">
-                    <input class="form-control form-control-lg" type="text" name="tarea_campo"
-                        placeholder="Nombre de la tarea">
+<head>
+    <title>AppWebReactiva | To-Do List</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header>
+        
+        <!-- place navbar here -->
+    </header>
+    <main class="container">
+        <br>
+        <div class="card">
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.php">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-address-book"
+                            width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z" />
+                            <path d="M10 16h6" />
+                            <path d="M13 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                            <path d="M4 8h3" />
+                            <path d="M4 12h3" />
+                            <path d="M4 16h3" />
+                        </svg>
+                        Lista de Tareas
+                    </a>
                 </div>
-                <br>
-                <div class="">
-                    <input class="btn btn-success btn-block" type="submit" name="agregar_tareas" value="Agregar">
+            </nav>
+            <div class="card-body">
+                <div class="mb-3">
+                    <form action="" method="post">
+                        <label for="tarea" class="form-label">Ingresa nombre de la tarea:</label>
+                        <input type="text" class="form-control" name="tarea" id="tarea" aria-describedby="helpId"
+                            placeholder="Titulo de la tarea" />
+                        <br>
+                        <input name="agregar_tarea" id="agregar_tarea" class="btn btn-primary" type="submit"
+                            value="Agregar tarea" />
+                    </form>
                 </div>
-            </form>
+                <ul class="list-group">
+                    <?php foreach ($registros as $registro) { ?>
+                        <li class="list-group-item">
+                            <form action="" method="post">
+                                <input type="hidden" name="id" value="<?php echo $registro['id']; ?>">
+                                <input 
+                                    class="form-check-input float-start" 
+                                    type="checkbox" 
+                                    name="completado"
+                                    value="<?php echo $registro['completada']; ?>" id="" 
+                                    onChange="this.form.submit()" 
+                                    <?php echo ($registro['completada'] == 1) ? 'checked' : ''; ?> />
+                            </form>
+                            &nbsp;
+                            <span
+                                class="float-start <?php echo ($registro['completada'] == 1) ? 'tachita' : ''; ?>">&nbsp;<?php echo $registro['nombre_tarea']; ?></span>
+                            <h6 class="float-start">
+                                &nbsp;<a href="?id=<?php echo $registro['id']; ?>"><span class="badge bg-danger">Borrar</a>
+                            </h6>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </div>
+            <div class="card-footer text-muted"></div>
         </div>
-    </div>
-    <!--MMostrar mensaje de alerta sobre tareas removidas -->
-    <?php
-    if (isset($_SESSION['delete_success'])) { ?>
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
 
-        <div class="alert alert-warning text-dark  mx-auto mt-4" role="alert" style="width:66%;">
-            <?= $_SESSION['delete_success']; ?>
-        </div>
-        <?php
-        unset($_SESSION['delete_success']);
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
 
-    }
-
-    ?>
-
-    <!-- Mostrar mensajes de alertas sobre tareas actualziadas -->
-
-    <?php
-    if (isset($_SESSION['upadate_success'])) { ?>
-
-        <div class="alert alert-warning text-dark  mx-auto mt-4" role="alert" style="width:66%;">
-            <?= $_SESSION['upadate_success']; ?>
-        </div>
-
-
-
-        <?php
-        unset($_SESSION['upadate_success']);
-
-    }
-
-    ?>
-
-    <!-- Creando una tabla -->
-
-    <table style="width:66%;" class="table table-sm table-borderless table-striped text-center mx-auto mt-3">
-        <thead class="bg-dark text-white text-center">
-            <tr>
-                
-                <th>Selecionar</th>
-                <th>Tarea</th>
-                <th>Alta</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-
-        <?php
-        require_once "db.php";
-        $task_show_query = "SELECT * FROM tareas ORDER BY id DESC";
-        $result = $conn->query($task_show_query);
-        if ($result->num_rows != 0) {
-            
-            foreach ($result as $row) {
-                $temp_date_time = explode(' ', $row['fecha_creacion']);
-                $date = $temp_date_time[0];
-                $time = $temp_date_time[1];
-
-                ?>
-
-                <tr>
-                    
-                    <td></td>
-                    <td><?= $row['nombre_tarea'] ?></td>
-                    <td><?= $date . ' ' . $time ?></td>
-
-
-
-                    <td>
-                        <div class="btn-group">
-                            <a class="btn btn-sm btn-warning"
-                                href="actualizar.php?id=<?php echo base64_encode($row['id']); ?>">Actualizar</a>
-                            &nbsp;&nbsp;
-                            <a class="btn btn-sm btn-danger"
-                                href="borrar.php?id=<?php echo base64_encode($row['id']); ?>">Borrar</a>
-                        </div>
-                    </td>
-                </tr>
-                <?php
-            }
-        }
-        //Mostrar "No hay tareas" en caso de que este limpia la base de datos
-        else {
-            ?>
-            <tr>
-                <td colspan="20" class="text-center display-4">No task</td>
-            </tr>
-            <?php
-        }
-        ?>
-
-
-    </table>
-    <!-- </div>
-  </div> -->
-
-    <!-- </div> -->
-
-
-
-    </body>
-
-    </html>
+</html>

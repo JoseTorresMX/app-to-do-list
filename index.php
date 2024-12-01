@@ -1,17 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List | Jose Torres</title>
+    <title>To-DO List App | Jose Torres</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Mi lista de Tareas</h1>
-        <!-- Formulario para añadir tarea -->
+<div class="container">
+        <h1>Mi Lista de Tareas</h1>
+        
         <!-- Formulario para añadir tarea -->
         <form id="task-form">
             <input type="text" id="task-input" placeholder="Introduce una nueva tarea" required>
@@ -37,7 +38,6 @@
         </div>
     </div>
 
-    <script src="js/app.js"></script>
+    <script src="app.js"></script>
 </body>
-
 </html>

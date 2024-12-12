@@ -1,43 +1,46 @@
+<?php
+require 'config/database.php';
 
+// Obtener todas las tareas
+$stmt = $pdo->query("SELECT * FROM tasks ORDER BY created_at DESC");
+$tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-DO List App | Jose Torres</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
-<div class="container">
-        <h1>Mi Lista de Tareas</h1>
-        
-        <!-- Formulario para añadir tarea -->
-        <form id="task-form">
-            <input type="text" id="task-input" placeholder="Introduce una nueva tarea" required>
-            <button type="submit">Añadir Tarea</button>
-        </form>
+    <h1>Todo List</h1>
+    <p>by Jose Angel Torres Santos</p>
+    <form action="actions/create.php" method="POST">
+        <input type="text" name="name" placeholder="Nueva tarea" required>
+        <button type="submit">Agregar</button>
+    </form>
 
-        <!-- Lista de tareas -->
-        <div id="task-list">
-            <!-- Las tareas se cargarán dinámicamente aquí -->
-        </div>
-    </div>
-
-    <!-- Modal para editar tarea -->
-    <div id="edit-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Editar Tarea</h2>
-            <form id="edit-task-form">
-                <input type="text" id="edit-task-input" required>
-                <input type="hidden" id="edit-task-id">
-                <button type="submit">Guardar Cambios</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="app.js"></script>
+    <ul>
+        <?php foreach ($tasks as $task): ?>
+            <li>
+                <form action="actions/update.php" method="POST" style="display:inline;">
+                    <input type="hidden" name="id" value="<?= $task['id'] ?>">
+                    <input type="checkbox" name="completed" <?= $task['completed'] ? 'checked' : '' ?>
+                        onchange="this.form.submit()">
+                    <span style="<?= $task['completed'] ? 'text-decoration: line-through;' : '' ?>">
+                        <?= htmlspecialchars($task['name']) ?>
+                    </span>
+                </form>
+                <form action="actions/delete.php" method="POST" style="display:inline;">
+                    <input type="hidden" name="id" value="<?= $task['id'] ?>">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </li>
+        <?php endforeach; ?>
+    </ul>
 </body>
+
 </html>

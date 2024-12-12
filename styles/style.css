@@ -1,0 +1,124 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f9;
+    color: #333;
+    min-height: 100vh;
+}
+
+h1 {
+    margin: 20px 0;
+    color: #2c3e50;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #3498db;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Lista */
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+li span {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+li span.completed {
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    transform: scale(1.2);
+    accent-color: #3498db;
+}
+
+/* Botón de eliminar */
+form[action*="delete.php"] button {
+    background-color: #e74c3c;
+    transition: background-color 0.3s ease;
+}
+
+form[action*="delete.php"] button:hover {
+    background-color: #c0392b;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+}

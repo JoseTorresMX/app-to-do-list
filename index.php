@@ -17,7 +17,7 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <h1>Todo List</h1>
-    <p>by Jose Angel Torres Santos</p>
+    <p>by Jose Angel Torres Santos #Control: 19112115</p>
     <form action="actions/create.php" method="POST">
         <input type="text" name="name" placeholder="Nueva tarea" required>
         <button type="submit">Agregar</button>
